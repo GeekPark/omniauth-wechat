@@ -49,7 +49,7 @@ module OmniAuth
         options.authorize_params.merge({:appid => options.appid,
                                         :redirect_uri => callback_url,
                                         :response_type => 'code',
-                                        :scope => request.params['scope'] || 'snsapi_login',
+                                        :scope => authorize_options[:scope] || 'snsapi_login',
                                         :state => request.params['state']
                                        })
       end
