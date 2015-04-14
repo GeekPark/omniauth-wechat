@@ -20,7 +20,7 @@ module OmniAuth
       option :auth_token_params, {}
       option :client_options, {
           :site => 'https://api.weixin.qq.com',
-          :authorize_url => 'https://open.weixin.qq.com/connect/oauth2/authorize',
+          :authorize_url => 'https://open.weixin.qq.com/connect/qrconnect',
           :token_url => 'https://api.weixin.qq.com/sns/oauth2/access_token',
           :token_method => :get,
           :raise_errors => false
@@ -49,7 +49,7 @@ module OmniAuth
         options.authorize_params.merge({:appid => options.appid,
                                         :redirect_uri => callback_url,
                                         :response_type => 'code',
-                                        :scope => request.params['scope'] || 'snsapi_userinfo',
+                                        :scope => request.params['scope'] || 'snsapi_login',
                                         :state => request.params['state']
                                        })
       end

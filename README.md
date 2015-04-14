@@ -1,29 +1,19 @@
 # Omniauth::Wechat
 
-TODO: Write a gem description
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-wechat'
+    gem 'omniauth-wechat', git: 'https://github.com/GeekPark/omniauth-wechat.git'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install omniauth-wechat
-
 ## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :wechat, YOUR_WECHAT_APP_ID, YOUR_WECHAT_SECRET
+end
+```
