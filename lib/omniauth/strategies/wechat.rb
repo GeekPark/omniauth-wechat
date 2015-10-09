@@ -96,9 +96,7 @@ module OmniAuth
       end
 
       extra do
-        {
-            :raw_info => raw_info
-        }
+        raw_info['unionid']
       end
 
       def raw_info
